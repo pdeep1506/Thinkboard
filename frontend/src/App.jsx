@@ -5,8 +5,8 @@ import NoteDetailPage from "./pages/NoteDetailPage"
 import toast from "react-hot-toast"
 const App = ()=>{
   return(
-    <div>
-      <button onClick={()=> toast.success("Congrats")}>Click me</button>
+    <div data-theme='forest'>
+      
     <Routes>
       <Route path="/" element={<HomePage></HomePage>}></Route>
       <Route path="/create" element={<CreatePage></CreatePage>}></Route>
