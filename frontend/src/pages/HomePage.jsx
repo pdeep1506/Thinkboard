@@ -52,7 +52,7 @@ const HomePage = () => {
            notes.map((note) => {
             return(
 
-              <NoteCard key={note._id} note={note}></NoteCard>
+              <NoteCard key={note._id} note={note} setNotes={setNotes}></NoteCard>
             )
             
           })}
