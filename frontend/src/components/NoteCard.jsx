@@ -25,6 +25,7 @@ const NoteCard = ({note, setNotes}) => {
             toast.error("Failed to delete note")
 
         };
+        
     }
   return (
     <Link to={`/note/${note._id}`}
