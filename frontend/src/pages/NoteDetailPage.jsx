@@ -37,7 +37,7 @@ const NoteDetailPage = () => {
     setSaving(true);
 
     try{
-      const updateNotes = await axios.put(`https://thinkboard-backend.onrender.com/api/notes/${id}`, note);
+      const updateNotes = await axios.put(`https://thinkboard-pdeep1506.onrender.com/api/notes/${id}`, note);
       toast.success("Note updated successfully");
       navigate("/");
     }
