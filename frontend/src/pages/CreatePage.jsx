@@ -23,7 +23,7 @@ const CreatePage = () => {
     try{
       const saveNote = async()=>{
 
-        const createNote = await axios.post('http://localhost:5001/api/notes/', {
+        const createNote = await axios.post('https://thinkboard-backend.onrender.com/api/notes/', {
           title, content
         })
         if(createNote.status === 201){

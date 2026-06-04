@@ -14,7 +14,7 @@ const HomePage = () => {
    useEffect(()=>{
       const fetchNotes = async ()=>{
         try{
-          const res = await axios.get('http://localhost:5001/api/notes/')
+          const res = await axios.get('https://thinkboard-backend.onrender.com/api/notes/')
           setNotes(res.data.Data);
           setIsRateLimited(false);
           // console.log(res.data.Data);
