@@ -3,7 +3,7 @@ import { createNotes, updateNotes, deleteNotes, getNotes, getNoteById } from '..
 const router = express.Router();
 
 
-app.get("/test", (req, res) => {
+router.get("/test", (req, res) => {
   res.json({
     success: true,
     message: "Backend is working!",
