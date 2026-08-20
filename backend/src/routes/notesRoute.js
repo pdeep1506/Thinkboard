@@ -9,11 +9,11 @@ router.get("/test", (req, res) => {
     message: "Backend is working!",
   });
 });
-// router.get('/', getNotes)
-// router.get('/:id', getNoteById)
-// router.post('/', createNotes)
-// router.put('/:id', updateNotes)
+router.get('/', getNotes)
+router.get('/:id', getNoteById)
+router.post('/', createNotes)
+router.put('/:id', updateNotes)
 
-// router.delete('/:id', deleteNotes)
+router.delete('/:id', deleteNotes)
 
 export default router
