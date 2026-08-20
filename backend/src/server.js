@@ -1,7 +1,7 @@
 import express from "express";
 import cors from 'cors';
 import dotenv from 'dotenv';
-import notesRoute from './routes/notesRoute.js'
+import router from './routes/notesRoute.js'
 import { connectDB } from "./config/db.js";
 import { rateLimiter } from "./middleware/rateLimiter.js";
 // import path from 'path';
@@ -31,7 +31,7 @@ app.use(rateLimiter)
 //     next();
 // })
 
-app.use('/api/notes', notesRoute);
+app.use('/api/notes', router);
 // Connect to MongoDB
 // await connectDB();
 
