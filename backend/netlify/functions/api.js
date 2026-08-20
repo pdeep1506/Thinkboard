@@ -16,12 +16,16 @@
 // };
 
 
+import app from "../../src/server.js";
+
+console.log("SERVER IMPORTED:", typeof app);
+
 export const handler = async () => {
   return {
     statusCode: 200,
     body: JSON.stringify({
       success: true,
-      message: "Netlify Function is working!",
+      expressLoaded: typeof app,
     }),
   };
 };
