@@ -3,11 +3,17 @@ import { createNotes, updateNotes, deleteNotes, getNotes, getNoteById } from '..
 const router = express.Router();
 
 
-router.get('/', getNotes)
-router.get('/:id', getNoteById)
-router.post('/', createNotes)
-router.put('/:id', updateNotes)
+app.get("/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "Backend is working!",
+  });
+});
+// router.get('/', getNotes)
+// router.get('/:id', getNoteById)
+// router.post('/', createNotes)
+// router.put('/:id', updateNotes)
 
-router.delete('/:id', deleteNotes)
+// router.delete('/:id', deleteNotes)
 
 export default router
