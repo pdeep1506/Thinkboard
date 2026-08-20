@@ -11,7 +11,7 @@ let dbConnected = false;
 export const handler = async (event, context) => {
   try {
     if (!dbConnected) {
-      // await connectDB();
+      await connectDB();
       dbConnected = true;
     }
 
