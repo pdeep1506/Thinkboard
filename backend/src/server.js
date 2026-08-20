@@ -9,7 +9,7 @@ import { rateLimiter } from "./middleware/rateLimiter.js";
 dotenv.config();
 const app = express();
 
-const router = notesRouteModule.default;
+
 
 if (process.env.NODE_ENV !== "production") {
   app.use(
