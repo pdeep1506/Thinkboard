@@ -4,15 +4,11 @@ import { connectDB } from "../../src/config/db.js"
 
 let dbConnected = false;
 
-const handler = serverless(async (req, res) => {
+export const handler = async (event, context) => {
   if (!dbConnected) {
     await connectDB();
     dbConnected = true;
   }
-});
-
-export const handler = async (event, context) => {
-  await connectToDatabase();
 
   const serverlessHandler = serverless(app);
 
