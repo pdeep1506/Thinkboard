@@ -1,31 +1,30 @@
-// import serverless from "serverless-http";
-// import app from "../../src/server.js";
-// import { connectDB } from "../../src/config/db.js"
+import * as serverModule from "../../src/server.js";
+import { connectDB } from "../../src/config/db.js";
+import serverless from "serverless-http";
 
-// let dbConnected = false;
+const app = serverModule.default;
 
-// export const handler = async (event, context) => {
-//   if (!dbConnected) {
-//     await connectDB();
-//     dbConnected = true;
-//   }
+const expressHandler = serverless(app);
 
-//   const serverlessHandler = serverless(app);
+let dbConnected = false;
 
-//   return serverlessHandler(event, context);
-// };
+export const handler = async (event, context) => {
+  try {
+    if (!dbConnected) {
+      await connectDB();
+      dbConnected = true;
+    }
 
+    return expressHandler(event, context);
+  } catch (error) {
+    console.error("Function error:", error);
 
-import app from "../../src/server.js";
-
-console.log("SERVER IMPORTED:", typeof app);
-
-export const handler = async () => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      success: true,
-      expressLoaded: typeof app,
-    }),
-  };
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        success: false,
+        message: "Internal server error",
+      }),
+    };
+  }
 };
