@@ -33,7 +33,7 @@ app.use(rateLimiter)
 
 app.use('/api/notes', notesRoute);
 // Connect to MongoDB
-await connectDB();
+// await connectDB();
 
 // Export Express app for Netlify
 export default app;
