@@ -2,7 +2,7 @@ import express from 'express';
 import { createNotes, updateNotes, deleteNotes, getNotes, getNoteById } from '../controllers/notesController.js';
 const router = express.Router();
 
-router.get('/test', async()=>{
+router.get('/test', async(req,res)=>{
     return res.status(200).json({success: true ,Message:"Testing Successfull"});
 })
 router.get('/', getNotes)
