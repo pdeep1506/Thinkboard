@@ -1,15 +1,13 @@
 import express from "express";
-import cors from 'cors';
-import dotenv from 'dotenv';
-import router from './routes/notesRoute.js'
-
+import cors from "cors";
+import dotenv from "dotenv";
+import * as notesRouteModule from "./routes/notesRoute.js";
 import { rateLimiter } from "./middleware/rateLimiter.js";
-// import path from 'path';
 
 dotenv.config();
 const app = express();
 
-
+const router = notesRouteModule.default;
 
 if (process.env.NODE_ENV !== "production") {
   app.use(
