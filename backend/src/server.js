@@ -24,7 +24,7 @@ else{
 // Middleware
 app.use(express.json())
 
-app.use(rateLimiter)
+// app.use(rateLimiter)
 // simple middleware
 // app.use((req,res,next)=>{
 //     console.log(`Req method is ${req.method} and Req URL is ${req.url}`)
