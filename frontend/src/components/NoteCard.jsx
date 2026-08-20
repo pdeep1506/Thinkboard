@@ -13,7 +13,7 @@ const NoteCard = ({note, setNotes}) => {
 
         try{
             const deleteNote = async()=>{
-                const res = await axios.delete(`https://thinkboard-pdeep1506.onrender.com/api/notes/${id}`)
+                const res = await axios.delete(`https://thinkboard-backend.netlify.app/api/notes/${id}`)
                 //! get ride of deleted note
                 setNotes((prev)=> prev.filter(notes=> notes._id != id))
                 toast.success("Note deleted successfully!")

@@ -14,7 +14,7 @@ const NoteDetailPage = () => {
   useEffect(()=>{
     const fetchNote = async()=>{
        try{
-          const res = await axios.get(`http://localhost:5001/api/notes/${id}`)
+          const res = await axios.get(`https://thinkboard-backend.netlify.app/api/notes/${id}`)
           setNote(res.data.Data);
           // console.log(res.data.Data);
          
@@ -37,7 +37,7 @@ const NoteDetailPage = () => {
     setSaving(true);
 
     try{
-      const updateNotes = await axios.put(`https://thinkboard-pdeep1506.onrender.com/api/notes/${id}`, note);
+      const updateNotes = await axios.put(`https://thinkboard-backend.netlify.app/api/notes/${id}`, note);
       toast.success("Note updated successfully");
       navigate("/");
     }
@@ -53,7 +53,7 @@ const NoteDetailPage = () => {
       if(!window.confirm("Are you sure you want to delete this note?")) return;
 
         try{
-                const res = await axios.delete(`http://localhost:5001/api/notes/${id}`)
+                const res = await axios.delete(`https://thinkboard-backend.netlify.app/api/notes/${id}`)
                 //! get ride of deleted note
                 toast.success("Note deleted");
                 navigate("/");
