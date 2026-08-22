@@ -6,7 +6,7 @@ A full-stack CRUD notes application built with the MERN stack, featuring rate li
 
 ## 🚀 Live Demo
 
-Deployed on [Render](https://thinkboard-pdeep1506.onrender.com)
+Deployed on [Netlify](https://thinkboard-frontend.netlify.app)
 
 ---
 
